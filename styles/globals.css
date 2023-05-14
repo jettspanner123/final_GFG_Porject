@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.blur_it {
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
+}
+
+body {
+  background-color: rgb(0, 0, 0);
+}
+
+.list_items {
+  padding-inline: 1.5rem;
+  padding-block: 1.5rem;
+  font-weight: 400;
+  text-align: left;
+  border-radius: 0.5rem;
+}
+
+.three_dot {
+  animation: threeDot 1s infinite;
+  animation-delay: 1;
+}
+
+.box {
+  animation: rotate 1s infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes rotate {
+  0% {
+  }
+  100% {
+    transform: rotate(-180deg);
+  }
+}
+
+@keyframes threeDot {
+  0% {
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.main_heading {
+  position: relative;
+}
+
+.main_heading::before {
+  content: " ";
+  background-color: white;
+  position: absolute;
+  height: 5px;
+  right: 0.5rem;
+  bottom: 0;
+  width: 40%;
+  border-radius: 1rem;
+  transition: width 300ms ease-in-out;
+}
+
+.main_heading:hover::before {
+  width: 93%;
+}
+
+.list_items:hover {
+  background-color: #303030;
+  color: white;
+  transition: all 250ms;
+  cursor: default;
+  height: 100%;
+}
